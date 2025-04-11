@@ -7,17 +7,14 @@ from sentiment_analysis import analyze_sentiment
 
 
 # ✅ Google Gemini AI Configuration (UPDATED TO `gemini-1.5-flash`)
-GEMINI_API_KEY = "AIzaSyC3b4rLYlJtIevMYDpKmEhJYC_JvA8-8s8"
+GEMINI_API_KEY = "AIzaSyAgDHCDG1WNuW3ROCH6pytOKKGCkpwHnOw"
 GEMINI_IMAGE_API = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent"
 
 # ✅ TMDb API Configuration
 API_KEY = "6caa82ec1f974b4d8dd7a5909e33e264"
 BASE_URL = "https://api.themoviedb.org/3"
 
-# ✅ Gemini AI API Configuration
-GEMINI_API_KEY = "AIzaSyC3b4rLYlJtIevMYDpKmEhJYC_JvA8-8s8"
-GEMINI_TEXT_API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent"
-#GEMINI_IMAGE_API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-vision:generateContent"
+
 
 def calculate_overall_sentiment(reviews):
     """Calculate the overall sentiment distribution from a list of reviews."""
@@ -201,7 +198,7 @@ def generate_ai_response(prompt):
         params = {"key": GEMINI_API_KEY}
         data = {"contents": [{"parts": [{"text": prompt}]}]}
 
-        response = requests.post(GEMINI_TEXT_API, headers=headers, json=data, params=params)
+        response = requests.post(GEMINI_IMAGE_API, headers=headers, json=data, params=params)
 
         if response.status_code == 200:
             return response.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
