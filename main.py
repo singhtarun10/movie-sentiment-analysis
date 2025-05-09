@@ -7,7 +7,7 @@ from utils import (
     calculate_overall_sentiment
 )
 
-st.title("🎬 Movie Sentiment & Recommendation System")
+st.title("🎬CineSence AI Movie Sentiment & Recommendation System")
 
 movie_name = st.text_input("Enter a movie name")
 
